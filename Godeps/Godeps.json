@@ -1,0 +1,20 @@
+{
+	"ImportPath": "github.com/twoporeguys/vms",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.6.1-5-gad87908",
+			"Rev": "ad8790881febb89da2b487073a57e079fa4aaa6f"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/pool",
+			"Rev": "4699b97613b74db996094bf03e19dd2ae90d8bbc"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/redis",
+			"Rev": "4699b97613b74db996094bf03e19dd2ae90d8bbc"
+		}
+	]
+}
