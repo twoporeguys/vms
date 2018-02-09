@@ -117,7 +117,10 @@ func main() {
 	r.Methods("POST").Path("/").Headers("content-type", "application/json").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var payload map[string]map[string]map[string]string
 		decoder := json.NewDecoder(r.Body)
-		decoder.Decode(&payload)
+		err := decoder.Decode(&payload)
+		if err != nil {
+			fmt.Println(err)
+		}
 		for app, envs := range payload {
 			setApp(app, envs)
 		}
@@ -134,7 +137,10 @@ func main() {
 		params := mux.Vars(r)
 		var payload map[string]string
 		decoder := json.NewDecoder(r.Body)
-		decoder.Decode(&payload)
+		err := decoder.Decode(&payload)
+		if err != nil {
+			fmt.Println(err)
+		}
 		for component, version := range payload {
 			setComponent(params["app"], params["env"], component, version)
 		}
@@ -143,7 +149,10 @@ func main() {
 		params := mux.Vars(r)
 		var version string
 		decoder := json.NewDecoder(r.Body)
-		decoder.Decode(&version)
+		err := decoder.Decode(&version)
+		if err != nil {
+			fmt.Println(err)
+		}
 		setComponent(params["app"], params["env"], params["component"], version)
 	})
 
