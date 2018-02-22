@@ -1,5 +1,11 @@
 # Version Management Service
 
+## Overview
+
+VMS is intended to be deployed as a server that accepts version information for various applications & environments and can answer queries regarding current version to deploy.
+
+![VMS Diagram](https://github.com/twoporeguys/vms/blob/master/docs/VMS-Diagram.png)
+
 ## Requirements
 Redis
 
